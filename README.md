@@ -28,14 +28,14 @@ Created and supported by Serhii Kyslovets with love.
 ### How to run ###
 
 * $ npm install
-* $ bower install 
+* $ bower install
 * $ gulp
 
 After that your project is going to run on localhost:9000
 
 ### How does it work? ###
 
-Gulp take files from src-folder, make some magic and put it into the dest-folder.
+Gulp take files from src-folder, compile it and serve from the dest-folder.
 
 ### Have a question? ###
 
