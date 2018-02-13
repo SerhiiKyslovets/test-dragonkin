@@ -7,16 +7,18 @@ Created and supported by Serhii Kyslovets with love.
 
 ### How to start with it ###
 
-* Create new repository on Bitbucket, for example
+* Create new_one repository on Bitbucket
 
-* $ mkdir foo
-* $ cd foo
-* $ git clone --bare https://serhii_kyslovets@bitbucket.org/serhii_kyslovets/new_project.git
-* $ git push --mirror https://serhii_kyslovets@bitbucket.org/serhii_kyslovets/new_one.git
-* & cd ..
-* & rm -rf foo
+*  mkdir foo
+*  cd foo
+*  git clone --bare https://serhii_kyslovets@bitbucket.org/serhii_kyslovets/new_project.git
+*  cd new_project.git
+*  git push --mirror https://serhii_kyslovets@bitbucket.org/serhii_kyslovets/new_one.git
+*  cd ..
+*  cd ..
+*  rm -rf foo
 
-* & git clone https://serhii_kyslovets@bitbucket.org/serhii_kyslvoets/new_one.git
+*  git clone https://serhii_kyslovets@bitbucket.org/serhii_kyslvoets/new_one.git
 
 ### What you need to work with it ###
 
