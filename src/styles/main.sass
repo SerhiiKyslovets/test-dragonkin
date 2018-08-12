@@ -1,3 +1,186 @@
 @import "./partial/fonts.sass"
 @import "./partial/variables.sass"
 @import "./partial/headers.sass"
+
+.top-captions
+  font-weight: bold
+  font-size: 18px
+  margin-bottom: 40px
+
+
+#wrap
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  min-width: 1150px
+  height: 100%
+  background: url('../img/bg.jpg') no-repeat
+  background-position: center
+  background-size: cover
+  background-color: $purple
+
+  header
+    display: inline-block
+    text-align: center
+    position: relative
+    width: 100%
+    background-color: $dark-purple
+    font-size: 14px
+    color: #ffffff
+
+    .tab
+      display: inline-block
+      position: relative
+      margin: 0 -2px
+      padding: 30px
+      color: #ffffff
+      text-decoration: none
+
+      &.active
+        background: linear-gradient(to bottom, #242334 0%, #2b2a3c 100%)
+
+      &.active::after
+        display: block
+        position: relative
+        top: 30px
+        content: ''
+        height: 3px
+        width: calc(100% + 60px)
+        margin: 0 auto
+        margin-left: -30px
+        @include bottom-border-gradient(to right, #de57b9, #fa8868, 3px)
+
+    #play-btn
+      padding: 10px 35px
+      margin-left: 35px
+      color: #ffffff
+      text-decoration: none
+      border: solid 2px $bright-purple
+      border-radius: 20px
+      background: linear-gradient(to right, $dark-purple 0%, $purple 100%)
+
+    .tab, #play-btn
+      &:hover
+        color: $bright-purple
+        transition: all .15s ease
+
+      &.active:hover
+        color: #ffffff
+
+    #profile-info
+      display: flex
+      flex-direction: row
+      position: absolute
+      right: 0
+      top: 0
+
+      a
+        margin: 27px 10px 18px
+        text-decoration: none
+        color: #ffffff
+
+      #cup
+        position: relative
+        width: 38px
+        height: 37px
+        background: url('../img/cup.png') no-repeat
+
+        &.dot::after
+          display: block
+          position: absolute
+          top: -5px
+          z-index: 100
+          right: 2px
+          width: 14px
+          height: 14px
+          content: ''
+          background-color: #bd47c0
+          border: 4px solid #000000
+          border-radius: 100px
+
+      #bell
+        position: relative
+        width: 38px
+        height: 37px
+        background: url('../img/bell.png') no-repeat
+
+        &.dot::after
+          display: block
+          position: absolute
+          top: -5px
+          z-index: 100
+          right: 6px
+          width: 14px
+          height: 14px
+          content: ''
+          background-color: #48d595
+          border: 4px solid #000000
+          border-radius: 100px
+
+      #score
+        position: relative
+        padding-left: 30px
+        // @include score-gradient(to right, #6e31c4, #cd4cbe, 2px)
+        border: 2px solid #cd4cbe
+        border-radius: 20px
+        margin: 20px 10px 20px
+
+        &::after
+          display: block
+          position: absolute
+          left: -10px
+          top: 2px
+          content: ''
+          background: url('../img/gem.png') no-repeat
+          background-position: 0% 0%
+          width: 36px
+          height: 30px
+
+        #score-bg
+          padding: 10px 10px 10px 0
+          background: url('../img/score-bg.png') no-repeat
+          background-size: 200%
+          background-position: 100% 0%
+          border-radius: 20px
+
+      #avatar
+        position: relative
+        width: 50px
+        height: 50px
+        margin: 16px 20px 16px 12px
+        border-radius: 100px
+        background: url('../img/avatar.png') no-repeat
+        background-position: 50% 0px
+        border: 2px solid $bright-purple
+
+        &.dot::after
+          display: block
+          position: absolute
+          bottom: -5px
+          z-index: 100
+          right: 0px
+          width: 14px
+          height: 14px
+          content: ''
+          background-color: #ef8364
+          border: 4px solid #000000
+          border-radius: 100px
+
+  #content
+    display: flex
+    flex-direction: row
+    justify-content: center
+    padding-top: 40px
+    color: #ffffff
+
+    a
+      text-decoration: none
+      color: #ffffff
+
+    #main-col
+      max-width: 830px
+      margin-right: 30px
+
+    #news
+      max-width: 440px

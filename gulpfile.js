@@ -29,6 +29,7 @@ var path = {
     styles: "./src/styles/main.sass",
     grid: "./src/styles/bootstrap-grid/bootstrap.css",
     js: "./src/js/**/*.js",
+    img: "./src/img/**/*.*",
     fonts: "./src/fonts/*.otf"
   },
 
@@ -37,12 +38,14 @@ var path = {
     styles: "./dist/styles/",
     grid: "./dist/styles/bootstrap-grid/",
     js: "./dist/js/",
+    img: "./dist/img/",
     fonts: "./dist/fonts/"
   },
 
   watch: {
     html: "./src/**/*.html",
     styles: "./src/styles/**/*.sass",
+    img: "./src/img/**/*.*",
     js: "./src/js/**/*.js"
   },
 
@@ -79,6 +82,11 @@ gulp.task('js', function () {
     .pipe(gulp.dest(path.dist.js));
 });
 
+gulp.task('img', function () {
+  gulp.src(path.src.img)
+    .pipe(gulp.dest(path.dist.img));
+})
+
 gulp.task('fonts', function () {
   gulp.src(path.src.fonts)
     .pipe(gulp.dest(path.dist.fonts));
@@ -90,7 +98,8 @@ gulp.task('server', ['compile'], function () {
   gulp.watch([path.watch.html], ['html']).on('change', browserSync.reload);
   gulp.watch([path.watch.styles], ['styles']);
   gulp.watch([path.watch.js], ['js']).on('change', browserSync.reload);
+  gulp.watch([path.watch.img], ['img'])
 });
 
-gulp.task('compile', ['html', 'styles', 'grid', 'js', 'fonts']);
+gulp.task('compile', ['html', 'styles', 'grid', 'js', 'img', 'fonts']);
 gulp.task('default', ['server']);

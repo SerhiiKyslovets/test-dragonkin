@@ -1,2 +1,23 @@
-$grey: #bcbec0
-$grey-light: #f1f2f2
+$dark-purple: #242334
+$purple: #565472
+$bright-purple: #9d9acc
+
+@mixin bottom-border-gradient($dir, $from, $to, $width)
+  border-left-width: 0
+  border-right-width: 0
+  background-image: linear-gradient($dir, $from, $to)
+  background-size: 100% $width
+  background-position: 0 100%, 0 0
+  background-repeat: no-repeat
+  background-clip: border-box
+
+@mixin score-gradient($dir, $from, $to, $width)
+
+  border-left: $width solid $from
+  border-right: $width solid $to
+
+  background-image: linear-gradient($dir, $from, $to), linear-gradient($dir, $from, $to)
+  background-size: 100% $width
+  background-position: 0 100%, 0 0
+  background-repeat: no-repeat
+  background-clip: border-box
