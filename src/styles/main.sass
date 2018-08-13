@@ -1,24 +1,45 @@
 @import "./partial/fonts.sass"
 @import "./partial/variables.sass"
-@import "./partial/headers.sass"
+
+#center-menu
+  font-size: 14px
 
 .top-captions
   font-weight: bold
   font-size: 18px
   margin-bottom: 40px
 
+i.arrow
+  border: solid $purple
+  border-width: 0 3px 3px 0
+  display: inline-block
+  padding: 4px
+  margin-bottom: 1px
+
+  &:hover
+    border: solid $bright-purple
+    border-width: 0 3px 3px 0
+    transition: all .1s ease
+
+.left
+  transform: rotate(135deg)
+  margin-right: 20px
+
+.right
+  transform: rotate(-45deg)
+  margin-left: 20px
+
+html, body
+  margin: 0
+  min-height: 100%
 
 #wrap
-  position: absolute
-  top: 0
-  left: 0
-  right: 0
   min-width: 1150px
   height: 100%
   background: url('../img/bg.jpg') no-repeat
-  background-position: center
-  background-size: cover
-  background-color: $purple
+  background-position: 0 0
+  background-size: contain
+  background-color: #323145
 
   header
     display: inline-block
@@ -96,7 +117,7 @@
           height: 14px
           content: ''
           background-color: #bd47c0
-          border: 4px solid #000000
+          border: 4px solid $dark-purple
           border-radius: 100px
 
       #bell
@@ -115,7 +136,7 @@
           height: 14px
           content: ''
           background-color: #48d595
-          border: 4px solid #000000
+          border: 4px solid $dark-purple
           border-radius: 100px
 
       #score
@@ -164,7 +185,7 @@
           height: 14px
           content: ''
           background-color: #ef8364
-          border: 4px solid #000000
+          border: 4px solid $dark-purple
           border-radius: 100px
 
   #content
@@ -181,6 +202,289 @@
     #main-col
       max-width: 830px
       margin-right: 30px
+
+      #back-link
+        &:hover
+
+          i
+            border: solid $bright-purple
+            border-width: 0 3px 3px 0
+            transition: all .1s ease
+
+      div
+        background-color: $dark-purple
+        border-radius: 10px
+        padding: 22px
+        margin: 30px 0
+
+        &.nav
+          position: relative
+          margin: 30px 0
+          background-color: rgba( $dark-purple, .8 )
+
+          a
+            color: $purple
+
+            &:hover
+              color: $bright-purple
+              transition: all .1s ease
+
+          #prev, #next
+            position: absolute
+            top: 12px
+
+            i.arrow
+              border-width: 0 2px 2px 0
+              padding: 3px
+
+            .left
+              transform: rotate(135deg)
+              margin-right: 15px
+
+            .right
+              transform: rotate(-45deg)
+              margin-left: 15px
+
+            &:hover
+              i
+                border: solid $bright-purple
+                border-width: 0 2px 2px 0
+                transition: all .1s ease
+
+          #prev
+            left: 30px
+
+
+          #next
+            right: 30px
+
+      .news-block
+
+        .img-cont
+          width: 100%
+          height: 305px
+          margin: 0 auto
+          border-radius: 10px
+          background: url('../img/pic-1.jpg') no-repeat
+          background-position: 0 0
+
+        h1
+          font-size: 22px
+          margin: 25px 0 8px
+
+        p
+          margin: 22px 0
+          color: $bright-purple
+          font-size: 16px
+
+          &.date
+            color: #6b698d
+            margin: 0
+
+        hr
+          display: block
+          margin: 0 -22px
+          height: 1px
+          border: 0
+          border-top: 2px solid #302f43
+          padding: 0
+
+        .info-cont
+          position: relative
+          margin: 0
+
+          div
+            background: none
+            margin: 0
+
+          .left-block
+            position: absolute
+            left: 0
+            top: 15px
+            padding: 0
+
+            .likes
+              margin-right: 30px
+
+              &::before
+                display: inline-block
+                position: relative
+                top: 3px
+                margin-right: 15px
+                width: 20px
+                height: 19px
+                content: ''
+                background: url('../img/thumb.png')
+
+            .view
+              color: $bright-purple
+
+              &::before
+                display: inline-block
+                position: relative
+                top: 5px
+                margin-right: 15px
+                width: 30px
+                height: 20px
+                content: ''
+                background: url('../img/eye.png') no-repeat
+
+          .right-block
+            position: absolute
+            right: 0
+            top: 15px
+            padding: 0
+
+            .share::before
+                display: inline-block
+                position: relative
+                top: 5px
+                margin-right: 15px
+                width: 30px
+                height: 25px
+                content: ''
+                background: url('../img/share.png') no-repeat
+
+            .fb::before
+                display: inline-block
+                position: relative
+                top: 5px
+                margin-right: 15px
+                width: 30px
+                height: 25px
+                content: ''
+                background: url('../img/fb.png') no-repeat
+
+            .twitter::before
+                display: inline-block
+                position: relative
+                top: 5px
+                margin-right: 15px
+                width: 30px
+                height: 25px
+                content: ''
+                background: url('../img/twitter.png') no-repeat
+
+
+      .comments-block
+
+        hr
+          display: block
+          margin: 0 -22px 20px
+          height: 1px
+          border: 0
+          border-top: 2px solid #302f43
+          padding: 0
+
+        .info-cont
+          position: relative
+          margin: 0
+          // padding: 0
+
+          div
+            background: none
+            margin: 0
+
+          .left-block
+            position: absolute
+            left: 0
+            top: 0
+            padding: 0
+
+            .comments
+              margin-right: 30px
+
+              .bright-text
+                font-style: normal
+
+                color: $bright-purple
+
+              &::before
+                display: inline-block
+                position: relative
+                top: 3px
+                margin-right: 15px
+                width: 20px
+                height: 19px
+                content: ''
+                background: url('../img/comment.png')
+
+          .right-block
+            position: absolute
+            right: 0
+            top: 0
+            padding: 0
+
+            .tab
+              display: inline-block
+              position: relative
+              margin: 0 10px
+              top: -22px
+              padding: 22px 5px
+              color: #ffffff
+              text-decoration: none
+
+              &.active::after
+                display: block
+                position: relative
+                top: 23px
+                content: ''
+                height: 2px
+                width: calc(100% + 10px)
+                margin: 0 auto
+                margin-left: -5px
+                @include bottom-border-gradient(to right, #de57b9, #fa8868, 3px)
+
+        input, textarea
+          color: $purple
+
+          &:focus
+            color: $purple
+
+        input
+          width: 100%
+          height: 60px
+          padding: 20px
+          background-color: #2a293b
+          border-radius: 5px
+          border: solid 0
+          font-size: 16px
+
+          &:focus
+            outline: none
+
+        .comment
+          padding: 0
+
+          .ava
+            display: inline-block
+            margin: 0
+            padding: 0
+            width: 60px
+            border-radius: 100px
+
+          .text
+            display: inline-block
+            margin: 0 20px 0
+
+            .name
+              font-size: 18px
+              font-style: normal
+              color: $bright-purple
+
+            .date
+              font-size: 16px
+              font-style: normal
+              color: #313044
+
+
+
+
+
+
+
+
+
 
     #news
       max-width: 440px
